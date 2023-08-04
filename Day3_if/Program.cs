@@ -15,7 +15,7 @@ namespace MyApp // Note: actual namespace depends on the project name.
             double a = 5.5;
             int b = 4;
             a = Convert.ToDouble(Console.ReadLine());
-            int result = a + b;
+            double result = a + b;
             Console.WriteLine(result);
         }
 
