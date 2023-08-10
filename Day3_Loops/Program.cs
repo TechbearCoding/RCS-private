@@ -4,7 +4,32 @@
     {
         static void Main(string[] args)
         {
-            Sample3();
+            Task2();
+        }
+
+        private static void Task2()
+        {
+            String a = "";
+            int b = 4;
+            for (int i = 0; i < b; i++)
+            {
+                a = a + "#";
+                Console.WriteLine(a);   
+            }
+        }
+
+        private static void Task1()
+        {
+            
+            int result = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                Console.WriteLine("Ievadi " + i +  ". skaitli!");
+                int skaitlis = Convert.ToInt32(Console.ReadLine());
+
+                result = result + skaitlis;
+            }
+            Console.WriteLine(result);
         }
 
         private static void Sample3()
