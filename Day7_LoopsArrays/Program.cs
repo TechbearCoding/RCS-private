@@ -4,7 +4,31 @@
     {
         static void Main(string[] args)
         {
-            ArraySample();
+            Task2();
+        }
+
+        private static void Task2()
+        {
+            int[] skaitlis = { 10, 15, 19, 18, 23, 45, 2, 1, 0 };
+
+            Console.WriteLine("Ievadi skaitli!");
+            int IevaditaisSkaitlis = Convert.ToInt32(Console.ReadLine());
+            bool uzminets = false;
+
+            for (int i = 0; i < skaitlis.Length; i++)
+            {
+                if (IevaditaisSkaitlis == skaitlis[i])
+                {
+                    uzminets = true;
+                    Console.WriteLine("Skaitlis ir uzminets!");
+                    break;
+                }
+            }
+
+            if (uzminets == false)
+            {
+                Console.WriteLine("Nav uzminets!");
+            }
         }
 
         private static void ArraySample()
@@ -32,6 +56,7 @@
             Console.WriteLine(nosaukums2[3]);
             Console.WriteLine(nosaukums2[4]);
 
+            nosaukums2[0] = nosaukums[0];
             //--------------------
 
             int[] nosaukums3 = new int[5];
