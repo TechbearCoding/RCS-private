@@ -4,24 +4,39 @@
     {
         static void Main(string[] args)
         {
-            String vertiba = "asdssdg";
+            TaskArrays();
+        }
 
-            String result = Nosaukums(vertiba);
-            result = Nosaukums("asdbjjkb");
+        static void TaskArrays()
+        {
+            Console.WriteLine("Ievadi masiva garumu!");
+            int a = Convert.ToInt32(Console.ReadLine());
 
-            double sk = 4.5;
+            double[] b = new double[a];
 
-            Console.WriteLine(Uzd2(2, 3));
+            Console.WriteLine("Ievadi visus masiva elementus!");
 
+            for (int i = 0; i < b.Length; i++)
+            {
+                b[i] = Convert.ToDouble(Console.ReadLine());
+            }
 
-            Console.WriteLine("Ievadi pirmo skaitli!");
-            int skaitlis1 = Convert.ToInt32(Console.ReadLine());
-            Console.WriteLine("Ievadi otro skaitli!");
-            double skaitlis2 = Convert.ToDouble(Console.ReadLine());
+            //uztaisit ciklu, kas iziet cauri masivam un izvada videjo vertibu
 
-            double metode = Uzd2(skaitlis1, skaitlis2);
-            Console.WriteLine(metode);
-            Console.ReadLine();
+        }
+
+        static void Sample1()
+        {
+            int[] a = new int[3];
+
+            a[0] = 1;
+            a[1] = 2;
+            a[2] = 3;
+
+            for(int i  = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
         }
 
         static double Uzd2(int skaitlis1, double skaitlis2)
