@@ -19,8 +19,8 @@ namespace Day9_arrays
         }
 
         static void Sample4(List<int> a) 
-        { 
-
+        {
+            //...
         }
 
         static List<int> Sample5()
@@ -28,7 +28,6 @@ namespace Day9_arrays
             List<int> saraksts = new List<int>();
 
             //...
-
 
             return saraksts;
         }
@@ -48,6 +47,9 @@ namespace Day9_arrays
             List<String> stringuSaraksts = new List<String>();
             stringuSaraksts.Add("Kaut kads");
             stringuSaraksts.Add("Teksts");
+
+            //izsaukt ar param
+            Sample4(saraksts);
 
         }
 
