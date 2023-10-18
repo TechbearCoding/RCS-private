@@ -4,16 +4,15 @@
     {
         static void Main(string[] args)
         {
-            PrivateSample.Run();
-            Console.WriteLine(PrivateSample.a);
 
             Students.vards= "Janis";
             Students.uzvards = "Berzins";
+
             Students.PievienotAtzimi(8);
             Students.PievienotAtzimi(10);
-            Students.PievienotAtzimi(4);
+            Students.PievienotAtzimi(6);
 
-            Students.IzvaditInfo();
+            Students.StudentaInfo();
         }
 
     }
