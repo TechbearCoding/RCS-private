@@ -4,6 +4,38 @@
     {
         static void Main(string[] args)
         {
+            List<Book> books = new List<Book>();
+            books.Add(new Book("aaa", "bbbb", "aaaaaaa", 2003));
+            books.Add(new Book("aasdasd", "dsfdf", "aaaaaaa", 2013));
+            books.Add(new Book("eeee", "ccc", "cxvxcv", 2020));
+
+            for(int i = 0; i < books.Count; i++)
+            {
+                books[i].IzvaditInfo();
+                Console.WriteLine("------------");
+            }
+        }
+
+        private static void PetSample()
+        {
+            List<Pet> petLists = new List<Pet>();
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine("Ievadi Majdzivnieka vardu!");
+                String name = Console.ReadLine();
+
+                Console.WriteLine("Ievadi Majdzivnieka tipu!");
+                String type = Console.ReadLine();
+
+                Console.WriteLine("Ievadi Majdzivnieka vecumu!");
+                int age = Convert.ToInt32(Console.ReadLine());
+
+                petLists.Add(new Pet(name, type, age));
+            }
+        }
+
+        private static void StudentSample()
+        {
             StudentO st1 = new StudentO("Janis", "Abolins");
             st1.StudentaInfo();
 
@@ -19,7 +51,7 @@
             }
         }
 
-        private static void sample1()
+        private static void Sample1()
         {
             int[] atzimes = { 4, 2, 8 };
 
