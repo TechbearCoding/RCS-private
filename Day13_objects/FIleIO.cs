@@ -14,10 +14,10 @@ namespace Day13_objects
             try
             {
                 String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                String fullName = Path.Combine(desktopPath, "test.txt");
+                String fullName = Path.Combine(desktopPath, "test2.txt");
 
                 StreamReader sr = new StreamReader(fullName);
-                // //Users//username//Desktop
+                
                 String line = sr.ReadLine();
 
                 while(line != null)
@@ -32,6 +32,28 @@ namespace Day13_objects
                 Console.WriteLine("Error!");
                 Console.WriteLine(ex.Message);
             }
+        }
+
+        public static void WriteFile()
+        {
+            String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+            String fullName = Path.Combine(desktopPath, "test2.txt");
+
+            try
+            {
+                StreamWriter wr = new StreamWriter(fullName, false);
+                wr.WriteLine("aaaa");
+                wr.WriteLine("bbbb");
+                wr.Flush();
+                wr.Dispose();
+            }
+            catch
+            {
+                Console.WriteLine("Error!");
+            }
+
+
+
         }
     }
 }
