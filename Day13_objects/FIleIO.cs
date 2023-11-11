@@ -9,12 +9,38 @@ namespace Day13_objects
 {
     public class FIleIO
     {
-        public static void ReadFile()
+        public static void IevaditVertibas(String filename)
         {
             try
             {
                 String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
-                String fullName = Path.Combine(desktopPath, "test2.txt");
+                String fullName = Path.Combine(desktopPath, filename);
+
+                StreamWriter file = new StreamWriter(fullName, false);
+
+                for (int i = 0; i < 5; i++)
+                {
+                    Console.WriteLine("Ievadi vertibu");
+                    String ievaditaVertiba = Console.ReadLine();
+                    file.WriteLine(ievaditaVertiba);
+                }
+                
+                file.Flush();
+                file.Dispose();
+            }
+            catch
+            {
+                Console.WriteLine("Error!");
+            }
+
+
+        }
+        public static void ReadFile(String filename)
+        {
+            try
+            {
+                String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
+                String fullName = Path.Combine(desktopPath, filename);
 
                 StreamReader sr = new StreamReader(fullName);
                 
@@ -51,9 +77,6 @@ namespace Day13_objects
             {
                 Console.WriteLine("Error!");
             }
-
-
-
         }
     }
 }
