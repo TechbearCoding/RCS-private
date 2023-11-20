@@ -4,8 +4,7 @@
     {
         static void Main(string[] args)
         {
-            FIleIO.IevaditVertibas("test4.txt");
-            FIleIO.ReadFile("test4.txt");
+            Homework.Homework1();
         }
 
         static void Sample() 
