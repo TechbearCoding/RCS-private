@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Homework.Homework1();
+            Task.RunTask();
         }
 
         static void Sample() 
