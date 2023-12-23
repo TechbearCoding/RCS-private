@@ -107,5 +107,28 @@ namespace Day18_sqlite2
                 Console.WriteLine(customerName + ": " + songName);
             }
         }
+
+        public static void CreateEmplList(SQLiteConnection conn)
+        {
+            SQLiteDataReader sQLiteDataReader;
+            SQLiteCommand cmd = conn.CreateCommand();
+            cmd.CommandText =
+                "SELECT employees.EmployeeId, employees.FirstName, employees.LastName, employees.City, employees.Country " +
+                "FROM employees;";
+
+            sQLiteDataReader = cmd.ExecuteReader();
+
+            while (sQLiteDataReader.Read())
+            {
+                int id = sQLiteDataReader.GetInt32(0);
+                String employeeName = sQLiteDataReader.GetString(1);
+                String employeeLastName = sQLiteDataReader.GetString(2);
+                String city = sQLiteDataReader.GetString(3);
+                String country = sQLiteDataReader.GetString(4);
+
+                Employee e = new Employee(id, employeeName, employeeLastName, city, country); //sis ir piemērs
+                e.Print(); //sis ir piemērs
+            }
+        }
     }
 }

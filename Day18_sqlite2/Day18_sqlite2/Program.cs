@@ -7,7 +7,7 @@ namespace Day18_sqlite2
         static void Main(string[] args)
         {
             SQLiteConnection conn = Connections.CreateConn();
-            Connections.ReadEmployeeInfo(conn);
+            Connections.CreateEmplList(conn);
         }
 
         static void Izveleties()
