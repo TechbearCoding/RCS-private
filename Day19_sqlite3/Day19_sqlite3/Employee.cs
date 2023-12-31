@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Day18_sqlite2
+namespace Day19_sqlite3
 {
     public class Employee
     {
@@ -28,6 +28,5 @@ namespace Day18_sqlite2
             Console.WriteLine("id: " + id + ", vards: " + vards + ", uzvards: " + uzvards + ", pilseta: " + pilseta + ", valsts: " + valsts);
             Console.WriteLine("-----------------");
         }
-
     }
 }

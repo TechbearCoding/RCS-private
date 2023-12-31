@@ -108,8 +108,10 @@ namespace Day18_sqlite2
             }
         }
 
-        public static void CreateEmplList(SQLiteConnection conn)
+        public static List<Employee> CreateEmplList(SQLiteConnection conn)
         {
+            List<Employee> employees = new List<Employee>();
+
             SQLiteDataReader sQLiteDataReader;
             SQLiteCommand cmd = conn.CreateCommand();
             cmd.CommandText =
@@ -126,9 +128,10 @@ namespace Day18_sqlite2
                 String city = sQLiteDataReader.GetString(3);
                 String country = sQLiteDataReader.GetString(4);
 
-                Employee e = new Employee(id, employeeName, employeeLastName, city, country); //sis ir piemērs
-                e.Print(); //sis ir piemērs
+                employees.Add(new Employee(id, employeeName, employeeLastName, city, country)); //sis ir piemērs
             }
+
+            return employees;
         }
     }
 }

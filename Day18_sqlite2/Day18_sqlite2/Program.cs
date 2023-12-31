@@ -7,7 +7,12 @@ namespace Day18_sqlite2
         static void Main(string[] args)
         {
             SQLiteConnection conn = Connections.CreateConn();
-            Connections.CreateEmplList(conn);
+            List<Employee> empList = Connections.CreateEmplList(conn);
+
+            foreach(Employee emp in empList)
+            {
+                emp.Print();
+            }
         }
 
         static void Izveleties()
