@@ -6,7 +6,7 @@
         {
             Connection connection = new Connection();
 
-            Queries.InsertEmp(connection.conn);
+            //Queries.InsertEmp(connection.conn);
 
             List<Employee> employees = Queries.CreateEmplList(connection.conn);
 

@@ -1,6 +1,6 @@
-﻿using System;
+﻿using Microsoft.Data.Sqlite;
+using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,18 +9,17 @@ namespace Day19_sqlite3
 {
     public class Queries
     {
-        public static List<Employee> CreateEmplList(SQLiteConnection conn)
+        public static List<Employee> CreateEmplList(SqliteConnection conn)
         {
             List<Employee> employees = new List<Employee>();
 
-            SQLiteDataReader sQLiteDataReader;
-            SQLiteCommand cmd = conn.CreateCommand();
+            SqliteDataReader sQLiteDataReader;
+            SqliteCommand cmd = conn.CreateCommand();
             cmd.CommandText =
                 "SELECT employees.EmployeeId, employees.FirstName, employees.LastName, employees.City, employees.Country " +
                 "FROM employees;";
 
             sQLiteDataReader = cmd.ExecuteReader();
-
             while (sQLiteDataReader.Read())
             {
                 int id = sQLiteDataReader.GetInt32(0);
@@ -29,24 +28,24 @@ namespace Day19_sqlite3
                 String city = sQLiteDataReader.GetString(3);
                 String country = sQLiteDataReader.GetString(4);
 
-                employees.Add(new Employee(id, employeeName, employeeLastName, city, country)); //sis ir piemērs
+                employees.Add(new Employee(id, employeeName, employeeLastName, city, country));
             }
 
             return employees;
         }
 
-        public static void InsertEmp(SQLiteConnection conn)
+        public static void InsertEmp(SqliteConnection conn, int id, String vards, String uzvards, String city, String country)
         {
-            SQLiteCommand cmd = conn.CreateCommand();
+            SqliteCommand cmd = conn.CreateCommand();
 
             cmd.CommandText = "INSERT INTO Employees(EmployeeId, FirstName, Lastname, city, country) " +
                 "VALUES (@id, @firstName, @lastName, @city, @country)";
 
-            cmd.Parameters.AddWithValue("@id", 99);
-            cmd.Parameters.AddWithValue("@firstName", "John");
-            cmd.Parameters.AddWithValue("@lastName", "Doe");
-            cmd.Parameters.AddWithValue("@city", "Riga");
-            cmd.Parameters.AddWithValue("@country", "Latvia");
+            cmd.Parameters.AddWithValue("@id", id);
+            cmd.Parameters.AddWithValue("@firstName", vards);
+            cmd.Parameters.AddWithValue("@lastName", uzvards);
+            cmd.Parameters.AddWithValue("@city", city);
+            cmd.Parameters.AddWithValue("@country", country);
 
             cmd.ExecuteNonQuery();
         }

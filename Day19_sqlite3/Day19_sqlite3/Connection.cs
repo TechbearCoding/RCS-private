@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.SQLite;
+using Microsoft.Data.Sqlite;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +9,7 @@ namespace Day19_sqlite3
 {
     public class Connection
     {
-        public SQLiteConnection conn { get; set; }
+        public SqliteConnection conn { get; set; }
 
         public Connection()
         {
@@ -20,13 +20,13 @@ namespace Day19_sqlite3
         {
             conn.Close();
         }
-        private static SQLiteConnection CreateConn()
+        private static SqliteConnection CreateConn()
         {
             String desktopPath = Environment.GetFolderPath(Environment.SpecialFolder.Desktop);
             String dbPath = "chinook.db";
             String fullName = Path.Combine(desktopPath, dbPath);
 
-            SQLiteConnection sqlite_conn = new SQLiteConnection("Data Source=" + fullName + "; Version=3");
+            SqliteConnection sqlite_conn = new SqliteConnection("Data Source=" + fullName + ";");
 
             try
             {
