@@ -17,11 +17,27 @@ namespace Day26Test
         }
 
         [Fact]
-        public void GetCombineTest() 
+        public void GetCombineTest_complete() 
         {
             String result = Sample.Combine("aaa", "bbb", "ccc");
             Assert.Equal("aaabbbccc", result);
-        
         }
+
+        [Fact]
+        public void GetCombineTest_error()
+        {
+            String result = Sample.Combine("aaa", "", "ccc");
+            Assert.Equal("error", result);
+
+            result = Sample.Combine("", "bbb", "ccc");
+            Assert.Equal("error", result);
+
+            result = Sample.Combine("aaa", "bbb", "");
+            Assert.Equal("error", result);
+
+            result = Sample.Combine("", "", "");
+            Assert.Equal("error", result);
+        }
+
     }
 }

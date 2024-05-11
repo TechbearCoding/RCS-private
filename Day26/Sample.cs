@@ -15,7 +15,12 @@ namespace Day26
 
         public static String Combine(String a, String b, String c)
         {
+            if(a == "" || b == "" || c =="")
+            {
+                return "error";
+            }
             return String.Concat(a, b, c);
-        } 
+        }
+        
     }
 }
